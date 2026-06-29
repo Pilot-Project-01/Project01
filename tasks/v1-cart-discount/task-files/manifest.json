@@ -1,0 +1,11 @@
+{
+  "task_id": "v1-cart-discount",
+  "prompt_file": "TASK.md",
+  "agent_note_file": "AGENT_NOTE.md",
+  "entry": "src/cart.ts",
+  "candidate_files": {
+    "src/cart.ts": "cart.ts",
+    "src/money.ts": "money.ts",
+    "src/cart.test.ts": "cart.test.ts"
+  }
+}

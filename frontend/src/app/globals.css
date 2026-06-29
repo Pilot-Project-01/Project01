@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+/*
+ * Design theme — v0 (warm). Warm stone neutrals, a soft clay/amber accent,
+ * generous rounding. Approachable and human, still simple. Semantic tokens so
+ * components never hard-code raw colors — re-theming is a one-file change.
+ * Light + dark via tokens.
+ */
+
+:root {
+  --background: #f5f4f2; /* warm off-white canvas */
+  --surface: #fffdfb; /* warm white cards/panels */
+  --foreground: #292524; /* stone-800 text */
+  --muted: #78716c; /* stone-500 secondary text */
+  --border: #e7e2dc; /* warm hairline */
+  --accent: #b45309; /* amber-700 clay — primary actions */
+  --accent-foreground: #fffdfb;
+  --success: #15803d;
+  --danger: #b91c1c;
+  --ring: #b45309;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1c1917; /* stone-900 */
+    --surface: #292524; /* stone-800 */
+    --foreground: #f5f5f4; /* stone-100 */
+    --muted: #a8a29e; /* stone-400 */
+    --border: #44403c; /* stone-700 */
+    --accent: #f59e0b; /* amber-500 — glows warm on dark */
+    --accent-foreground: #1c1917; /* dark text on amber, high contrast */
+    --success: #22c55e;
+    --danger: #ef4444;
+    --ring: #f59e0b;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+  --color-ring: var(--ring);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* Softer, rounder shapes throughout. */
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.25rem;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Consistent, visible keyboard focus everywhere. */
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
